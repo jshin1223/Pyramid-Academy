@@ -174,17 +174,16 @@ class HumansVsGoblins {
 
 
                     if (randomHumanPower > randomGoblinPower) {
-                        System.out.println("Human won!");
-                        humanEnergy = humanEnergy + 1;
+                        System.out.println("=> Human won! (Human +1, Goblin -3)");                        humanEnergy = humanEnergy + 1;
                         goblinEnergy = goblinEnergy - 3;
                         break;
                     } else if (randomGoblinPower > randomHumanPower) {
-                        System.out.println("Goblin won!");
+                        System.out.println("=> Goblin won! (Goblin +1, Human -3)");
                         goblinEnergy = goblinEnergy + 1;
                         humanEnergy = humanEnergy - 3;
                         break;
                     } else if (randomHumanPower == randomGoblinPower) {
-                        System.out.println("We will walk away for now. Until we meet again!");
+                        System.out.println("=> Draw! We will walk away for now. Until we meet again!");
                         break;
                     }
 
@@ -254,17 +253,17 @@ class HumansVsGoblins {
 
 
                     if (randomHumanPower > randomGoblinPower) {
-                        System.out.println("Human won!");
+                        System.out.println("=> Human won! (Human +1, Goblin -3)");
                         humanEnergy = humanEnergy + 1;
                         goblinEnergy = goblinEnergy - 3;
                         break;
                     } else if (randomGoblinPower > randomHumanPower) {
-                        System.out.println("Goblin won!");
+                        System.out.println("=> Goblin won! (Goblin +1, Human -3)");
                         goblinEnergy = goblinEnergy + 1;
                         humanEnergy = humanEnergy - 3;
                         break;
                     } else if (randomHumanPower == randomGoblinPower) {
-                        System.out.println("We will walk away for now. Until we meet again!");
+                        System.out.println("=> Draw! We will walk away for now. Until we meet again!");
                         break;
                     }
 
