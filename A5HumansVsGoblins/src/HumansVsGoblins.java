@@ -160,7 +160,9 @@ class HumansVsGoblins {
 
 
 
-                while (humanPositions.contains(humanPos) || goblinPositions.contains(humanPos)) {
+                while (humanPositions.contains(humanPos) || goblinPositions.contains(humanPos) ||
+                        humanPos - goblinPos == 1 || goblinPos - humanPos == 1 ||
+                        humanPos - goblinPos == 10 || goblinPos - humanPos == 10) {
                     System.out.println("Human and Goblin collided. The combat began!");
                     int min = 1;
                     int max = 10;
@@ -237,7 +239,9 @@ class HumansVsGoblins {
                     }
                 }
 
-                while (humanPositions.contains(goblinPos) || goblinPositions.contains(goblinPos)) {
+                while (humanPositions.contains(goblinPos) || goblinPositions.contains(goblinPos) ||
+                        humanPos - goblinPos == 1 || goblinPos - humanPos == 1 ||
+                        humanPos - goblinPos == 10 || goblinPos - humanPos == 10) {
 
                     System.out.println("Human and Goblin collided. The combat began!");
                     int min = 1;
