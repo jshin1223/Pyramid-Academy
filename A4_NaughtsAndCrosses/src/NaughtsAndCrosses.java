@@ -199,31 +199,20 @@ public class NaughtsAndCrosses {
 
         for (List l : winning) {
 
-
-
-
-
-              if (playerPositions.size() + cpuPositions.size() == 9) {
-
                   if (cpuPositions.containsAll(l)) {
                       return "The computer has beaten you! You lose.";
                   } else if (playerPositions.containsAll(l)) {
                       return "Congratulations you won!";
-                  } else if (playerPositions.containsAll(l) == false && cpuPositions.containsAll(l) == false){
-                      return "Tie!";
+                  } else if (playerPositions.size() + cpuPositions.size() == 9) {
+
+                      if (cpuPositions.containsAll(l)) {
+                          return "The computer has beaten you! You lose.";
+                      } else if (playerPositions.containsAll(l)) {
+                          return "Congratulations you won!";
+                      } else {
+                          return "Tie";
+                      }
                   }
-
-                } else if (playerPositions.size() + cpuPositions.size() != 9) {
-
-                  if (playerPositions.containsAll(l)) {
-                      return "Congratulations you won!";
-                  } else if (cpuPositions.containsAll(l)) {
-                      return "The computer has beaten you! You lose.";
-                  }
-
-              }
-
-
 
 
         }
