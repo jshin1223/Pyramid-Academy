@@ -68,9 +68,12 @@ public class NaughtsAndCrosses {
 
                 placePiece(gameBoard, playerPos, "player");
                 printGameBoard(gameBoard);
+                System.out.println("The player(X) has chosen the next position.\n");
+
 
                 String result = checkWinner();
                 if (result.length() > 0) {
+                    printGameBoard(gameBoard);
                     System.out.println(result);
                     break;
                 }
@@ -92,6 +95,7 @@ public class NaughtsAndCrosses {
 
                 result = checkWinner();
                 if (result.length() > 0) {
+                    printGameBoard(gameBoard);
                     System.out.println(result);
                     break;
                 }
@@ -197,28 +201,36 @@ public class NaughtsAndCrosses {
 
 
 
-            if ( playerPositions.containsAll(l) && cpuPositions.containsAll(l) && playerPositions.size() + cpuPositions.size() == 9) {
-                return ("Tie!");
-            }
-            else if (playerPositions.containsAll(l)) {
-                return "Congratulations you won!";
-            } else if (cpuPositions.containsAll(l)) {
-                return "The computer has beaten you! You lose.\n";
-            }
-            else if (playerPositions.size() + cpuPositions.size() == 9 && playerPositions.containsAll(l)) {
-                return "Congratulations you won!";
-            }
-            else if (playerPositions.size() + cpuPositions.size() == 9 && cpuPositions.containsAll(l)) {
-                return "The computer has beaten you! You lose.\n";
-            }
+
+
+              if (playerPositions.size() + cpuPositions.size() == 9) {
+
+                  if (cpuPositions.containsAll(l)) {
+                      return "The computer has beaten you! You lose.";
+                  } else if (playerPositions.containsAll(l)) {
+                      return "Congratulations you won!";
+                  } else if (playerPositions.containsAll(l) == false && cpuPositions.containsAll(l) == false){
+                      return "Tie!";
+                  }
+
+                } else if (playerPositions.size() + cpuPositions.size() != 9) {
+
+                  if (playerPositions.containsAll(l)) {
+                      return "Congratulations you won!";
+                  } else if (cpuPositions.containsAll(l)) {
+                      return "The computer has beaten you! You lose.";
+                  }
+
+              }
+
+
+
 
         }
 
 
         return "";
     }
-
-
 
 
 }
