@@ -26,8 +26,8 @@ class HumansVsGoblins {
 
             humanPositions = new ArrayList<Integer>();
             goblinPositions = new ArrayList<Integer>();
-            humanEnergy = 3;
-            goblinEnergy = 3;
+            humanEnergy = 10;
+            goblinEnergy = 10;
 
             System.out.println("");
             System.out.println("Welcome to Humans vs Goblins!");
