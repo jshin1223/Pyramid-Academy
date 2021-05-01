@@ -174,7 +174,8 @@ class HumansVsGoblins {
 
 
                     if (randomHumanPower > randomGoblinPower) {
-                        System.out.println("=> Human won! (Human +1, Goblin -3)");                        humanEnergy = humanEnergy + 1;
+                        System.out.println("=> Human won! (Human +1, Goblin -3)");
+                        humanEnergy = humanEnergy + 1;
                         goblinEnergy = goblinEnergy - 3;
                         break;
                     } else if (randomGoblinPower > randomHumanPower) {
