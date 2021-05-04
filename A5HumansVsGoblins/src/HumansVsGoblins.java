@@ -171,7 +171,7 @@ class HumansVsGoblins {
 
 
                 placePiece(land, humanPos, "human");
-                // printGameBoard(land);
+              
 
                 String result = checkWinner();
                 if (result.length() > 0) {
