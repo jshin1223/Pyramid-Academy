@@ -50,26 +50,13 @@ class HumansVsGoblins {
                             {'9', ' ', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'}};
 
 
-//            System.out.println("                        n\n" +
-//                    "                      w + e    # (Human)\n" +
-//                    "                        s      @ (Goblin)");
-            //printGameBoard(land);
 
 
-
-
-//            System.out.println("Do you want to go first? (y or n)");
-//            Scanner answer = new Scanner(System.in);
-//            String humanAnswer = answer.nextLine();
 
 
             Random rand = new Random();
             int humanPos = rand.nextInt(100) + 1;
             placePiece(land, humanPos, "human");
-            // printGameBoard(land);
-            // System.out.println("Human(#) will go first.");
-            // System.out.println("Human(#) has been placed on the land.");
-
 
 
             rand = new Random();
@@ -109,14 +96,6 @@ class HumansVsGoblins {
 
                 humanPositions = new ArrayList<Integer>();
                 goblinPositions = new ArrayList<Integer>();
-
-                // Repeated On-going Board
-//                humanPositions = new ArrayList<Integer>();
-//                goblinPositions = new ArrayList<Integer>();
-//                placePiece(land, humanPos, "human");
-//                placePiece(land, goblinPos, "goblin");
-//                printGameBoard(land);
-
 
 
 
