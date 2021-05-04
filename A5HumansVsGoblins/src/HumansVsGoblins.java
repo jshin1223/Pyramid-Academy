@@ -63,7 +63,6 @@ class HumansVsGoblins {
             int goblinPos = rand.nextInt(100) + 1;
             placePiece(land, goblinPos, "goblin");
             printGameBoard(land);
-            // System.out.println("Goblin(@) will go first.");
 
 
             System.out.println("\nLet's Begin!\n" + "Human(#) and Goblin(@) have been placed on the land.");
@@ -171,7 +170,7 @@ class HumansVsGoblins {
 
 
                 placePiece(land, humanPos, "human");
-              
+
 
                 String result = checkWinner();
                 if (result.length() > 0) {
