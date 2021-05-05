@@ -51,7 +51,7 @@ public class Battleship
         int row = rand.nextInt(0, 9);
         int col = rand.nextInt(0, 9);
 
-        // While computer already guessed this posiiton, make a new random guess
+        // While computer already guessed this position, make a new random guess
         while (comp.oppGrid.alreadyGuessed(row, col))
         {
             row = rand.nextInt(0, 9);
