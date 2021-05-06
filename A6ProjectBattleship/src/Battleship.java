@@ -26,12 +26,18 @@ class Battleship {
     public static int realShipPosColumn5;
 
 
-    public static int realShipTargetRow;
-    public static int shipTargetRow;
-    public static int realShipTargetColumn;
-    public static int shipTargetColumn;
+    public static int realShipTargetRowH;
+    public static int shipTargetRowH;
+    public static int realShipTargetColumnH;
+    public static int shipTargetColumnH;
 
 
+    public static int realShipTargetRowC;
+    public static int shipTargetRowC;
+    public static int realShipTargetColumnC;
+    public static int shipTargetColumnC;
+
+    public static boolean gameOver = false;
 
     public static void main(String[] args) {
 
@@ -55,9 +61,8 @@ class Battleship {
                         {'8', ' ', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~'},
                         {'9', ' ', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~'}};
 
-
+        System.out.println("---------------------- Human Ships ---------------");
         printSeaHuman(seaHuman);
-        System.out.println("---------------------- Human Ships: ---------------");
 
 
 // Will place ships for human ships
@@ -71,7 +76,7 @@ class Battleship {
         // Destroyer: 2
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Human Ships:\n" +
+        System.out.println("\nPlacing Human Ships:\n" +
                 "Please place a Destroyer (Size 2):\n" +
                 "Choose a row (0-9):");
         Scanner rowDestroyerHuman = new Scanner(System.in);
@@ -87,14 +92,13 @@ class Battleship {
 
 
         placePieceHuman(seaHuman, "destroyer");
+        System.out.println("---------------------- Human ships shown below ---------------");
         printSeaHuman(seaHuman);
-        System.out.println("---------------------- Human Ships: ---------------");
-
 
         // Cruiser: 3
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Human Ships:\n" +
+        System.out.println("\nPlacing Human Ships:\n" +
                 "Please place a Cruiser (Size 3):\n" +
                 "Choose a row (0-9):");
         Scanner rowCruiserHuman = new Scanner(System.in);
@@ -109,14 +113,14 @@ class Battleship {
         shipPosHorVer = hvCruiserHuman.nextLine();
 
         placePieceHuman(seaHuman, "cruiser");
+        System.out.println("---------------------- Human ships shown below ---------------");
         printSeaHuman(seaHuman);
-        System.out.println("---------------------- Human Ships: ---------------");
 
 
         // Battleship: 4
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Human Ships:\n" +
+        System.out.println("\nPlacing Human Ships:\n" +
                 "Please place a Battleship (Size 4):\n" +
                 "Choose a row (0-9):");
         Scanner rowBattleshipHuman = new Scanner(System.in);
@@ -131,14 +135,14 @@ class Battleship {
         shipPosHorVer = hvBattleshipHuman.nextLine();
 
         placePieceHuman(seaHuman, "battleship");
+        System.out.println("---------------------- Human ships shown below ---------------");
         printSeaHuman(seaHuman);
-        System.out.println("---------------------- Human Ships: ---------------");
 
 
         // Aircraft Carrier: 5
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Human Ships:\n" +
+        System.out.println("\nPlacing Human Ships:\n" +
                 "Please place a Aircraft Carrier (Size 5):\n" +
                 "Choose a row (0-9):");
         Scanner rowAircraftCarrierHuman = new Scanner(System.in);
@@ -153,9 +157,8 @@ class Battleship {
         shipPosHorVer = hvAircraftCarrierHuman.nextLine();
 
         placePieceHuman(seaHuman, "aircraftCarrier");
+        System.out.println("---------------------- Human ships shown below ---------------"); 
         printSeaHuman(seaHuman);
-        System.out.println("---------------------- Human Ships: ---------------");
-
 
 
 
@@ -175,9 +178,10 @@ class Battleship {
                         {'8', ' ', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~'},
                         {'9', ' ', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~', ' ', '~'}};
 
-        
+
+        System.out.println("\n\n\n\n" + "------------------- CPU Ships: ---------------");
         printSeaCPU(seaCPU);
-        System.out.println("------------------- CPU Ships:");
+        System.out.println("\nNext Computer will place its ships:");
 
 
         // Randomly will place CPU ships
@@ -192,7 +196,7 @@ class Battleship {
         // Destroyer: 2
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Computer Ships:\n" +
+        System.out.println("\nPlacing Computer Ships:\n" +
                 "Please place a Destroyer (Size 2):\n" +
                 "Choose a row (0-9):");
         Scanner rowDestroyerCPU = new Scanner(System.in);
@@ -208,16 +212,15 @@ class Battleship {
 
 
         placePieceCPU(seaCPU, "destroyer");
+        System.out.println("--------------------------- Computer ships shown below ----------------");
         printSeaCPU(seaCPU);
-        System.out.println("--------------------------- Computer Ships: ----------------");
-
 
 
 
         // Cruiser: 3
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Computer Ships:\n" +
+        System.out.println("\nPlacing Computer Ships:\n" +
                 "Please place a Cruiser (Size 3):\n" +
                 "Choose a row (0-9):");
         Scanner rowCruiserCPU = new Scanner(System.in);
@@ -232,15 +235,15 @@ class Battleship {
         shipPosHorVer = hvCruiserCPU.nextLine();
 
         placePieceCPU(seaCPU, "cruiser");
+        System.out.println("--------------------------- Computer ships shown below ----------------");
         printSeaCPU(seaCPU);
-        System.out.println("--------------------------- Computer Ships: ----------------");
 
 
 
         // Battleship: 4
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Computer Ships:\n" +
+        System.out.println("\nPlacing Computer Ships:\n" +
                 "Please place a Battleship (Size 4):\n" +
                 "Choose a row (0-9):");
         Scanner rowBattleshipCPU = new Scanner(System.in);
@@ -255,15 +258,15 @@ class Battleship {
         shipPosHorVer = hvBattleshipCPU.nextLine();
 
         placePieceCPU(seaCPU, "battleship");
+        System.out.println("--------------------------- Computer ships shown below ----------------");
         printSeaCPU(seaCPU);
-        System.out.println("--------------------------- Computer Ships: ----------------");
 
 
 
         // Aircraft Carrier: 5
         shipPosRow = 0;
         shipPosColumn = 0;
-        System.out.println("Placing Computer Ships:\n" +
+        System.out.println("\nPlacing Computer Ships:\n" +
                 "Please place a Aircraft Carrier (Size 5):\n" +
                 "Choose a row (0-9):");
         Scanner rowAircraftCarrierCPU = new Scanner(System.in);
@@ -278,63 +281,182 @@ class Battleship {
         shipPosHorVer = hvAircraftCarrierCPU.nextLine();
 
         placePieceCPU(seaCPU, "aircraftCarrier");
-
+        System.out.println("--------------------------- Computer ships shown below ----------------");
         printSeaCPU(seaCPU);
-        System.out.println("--------------------------- Computer Ships: ----------------");
 
 
 
         while (true) {
 
             // Human Targeting
-            shipTargetRow = 0;
-            shipTargetColumn = 0;
+            shipTargetRowH = 0;
+            shipTargetColumnH = 0;
             System.out.println("\nYour turn:\n" + "What is your next target? [row][column]");
             System.out.println("Horizontal Target (0-9): ");
             Scanner targetRow = new Scanner(System.in);
-            shipTargetRow = targetRow.nextInt();
+            shipTargetRowH = targetRow.nextInt();
             System.out.println("Vertical Target (0-9): ");
             Scanner targetCol = new Scanner(System.in);
-            shipTargetColumn = targetCol.nextInt();
+            shipTargetColumnH = targetCol.nextInt();
 
-
-            placeTargetHuman(seaCPU);
-
-//            System.out.println("\n------------ Human Ships shown below: ------------\n");
-//            printSeaCPU(seaHuman);
-//
-//
-//            System.out.println("\n------------ CPU Ships shown below: -------------\n");
-//            printSeaCPU(seaCPU);
 
 
 
             // CPU Targeting
-            shipTargetRow = 0;
-            shipTargetColumn = 0;
+            shipTargetRowC = 0;
+            shipTargetColumnC = 0;
             Random randRow = new Random();
             int cpuTargetRow = randRow.nextInt(9) + 1;
-            shipTargetRow = cpuTargetRow;
+            shipTargetRowC = cpuTargetRow;
 
             Random randCol = new Random();
             int cpuTargetColumn = randCol.nextInt(9) + 1;
-            shipTargetColumn = cpuTargetColumn;
+            shipTargetColumnC = cpuTargetColumn;
 
-            System.out.println("\nCPU's turn:\nCPU has made a guess: ");
+            System.out.println("\nComputer's turn:\nComputer has made a guess: ");
+
+            System.out.println("\n============================================\n" +
+                    "============================================\n" +
+                    "============ Here is the result ============\n" +
+                    "============================================\n" +
+                    "============================================");
+
+
+                    // Showing the Result
+
+            placeTargetHuman(seaCPU);
             placeTargetCPU(seaHuman);
 
-            System.out.println("\n------------ Human Ships shown below: ------------\n");
+            System.out.println("\n------------ Human ships shown below ------------\n");
             printSeaCPU(seaHuman);
 
-
-            System.out.println("\n------------ Computer Ships shown below: -------------\n");
+            System.out.println("\n------------ Computer ships shown below -------------\n");
             printSeaCPU(seaCPU);
 
+            countShipsHuman(seaHuman);
+            countShipsCPU(seaCPU);
+
+            if (gameOver == true) {
+                break;
+            }
 
 
         }
 
 
+    }
+
+
+    public static void countShipsHuman(char[][] seaHuman) {
+
+        int countD = 0;
+        int countC = 0;
+        int countB = 0;
+        int countA = 0;
+
+        for (char[] row : seaHuman) {
+            for (char c : row) {
+                if (c == 'D') {
+                    countD++;
+                }
+                if (c == 'C') {
+                    countC++;
+                }
+                if (c == 'B') {
+                    countB++;
+                }
+                if (c == 'A') {
+                    countA++;
+                }
+            }
+        }
+
+        System.out.println ("\nYour Ships: Destroyer(" + countD + "/" + "2)" + " " + "Cruiser(" + countC + "/" + "3)" + " " +
+                "Battleship(" + countB + "/" + "4)" + " " + "Aircraft Carrier(" + countA + "/" + "5)");
+
+
+        if (countD == 0) {
+            System.out.println("- Your destroyer has sunk!");
+        }
+
+        if (countC == 0) {
+            System.out.println("- Your cruiser has sunk!");
+
+        }
+
+        if (countB == 0) {
+            System.out.println("- Your battleship has sunk!");
+        }
+
+        if (countA == 0) {
+            System.out.println("- Your aircraft carrier has sunk!");
+        }
+
+        if (countD == 0 && countC == 0 && countB == 0 && countA == 0 ) {
+            System.out.println("- All of your ships have sunk!\n" +
+                    "============== Game Over ===============");
+                     gameOver = true;
+        }
+
+
+    }
+
+
+
+
+
+    public static void countShipsCPU(char[][] seaCPU) {
+
+        int countD = 0;
+        int countC = 0;
+        int countB = 0;
+        int countA = 0;
+
+        for (char[] row : seaCPU) {
+            for (char c : row) {
+                if (c == 'D') {
+                    countD++;
+                }
+                if (c == 'C') {
+                    countC++;
+                }
+                if (c == 'B') {
+                    countB++;
+                }
+                if (c == 'A') {
+                    countA++;
+                }
+            }
+        }
+
+
+
+        System.out.println ("\nComputer's Ships: Destroyer(" + countD + "/" + "2)" + " " + "Cruiser(" + countC + "/" + "3)" + " " +
+                "Battleship(" + countB + "/" + "4)" + " " + "Aircraft Carrier(" + countA + "/" + "5)");
+
+
+        if (countD == 0) {
+            System.out.println("- Computer's destroyer has sunk!");
+        }
+
+        if (countC == 0) {
+            System.out.println("- Computer's cruiser has sunk!");
+
+        }
+
+        if (countB == 0) {
+            System.out.println("- Computer's battleship has sunk!");
+        }
+
+        if (countA == 0) {
+            System.out.println("- Computer's aircraft carrier has sunk!");
+        }
+
+        if (countD == 0 && countC == 0 && countB == 0 && countA == 0 ) {
+            System.out.println("- All of Computer's ships have sunk!\n" +
+                    "============== Game Over ===============");
+                    gameOver = true;
+        }
     }
 
 
@@ -362,20 +484,22 @@ class Battleship {
 
     public static void placeTargetHuman(char[][] seaCPU) {
 
-        realShipTargetRow = shipTargetRow + 1;
-        realShipTargetColumn = (shipTargetColumn * 2) + 3;
 
-        if (seaCPU[realShipTargetRow][realShipTargetColumn] == 'D' ||
-                seaCPU[realShipTargetRow][realShipTargetColumn] == 'C' ||
-                seaCPU[realShipTargetRow][realShipTargetColumn] == 'B' ||
-                seaCPU[realShipTargetRow][realShipTargetColumn] == 'A') {
 
-            System.out.println("\n================================> You hit a CPU ship! (X added)\n");
-            seaCPU[realShipTargetRow][realShipTargetColumn] = 'X';
+        realShipTargetRowH = shipTargetRowH + 1;
+        realShipTargetColumnH = (shipTargetColumnH * 2) + 3;
+
+        if (seaCPU[realShipTargetRowH][realShipTargetColumnH] == 'D' ||
+                seaCPU[realShipTargetRowH][realShipTargetColumnH] == 'C' ||
+                seaCPU[realShipTargetRowH][realShipTargetColumnH] == 'B' ||
+                seaCPU[realShipTargetRowH][realShipTargetColumnH] == 'A') {
+
+            System.out.println("\n===> You hit a computer ship! (X added)");
+            seaCPU[realShipTargetRowH][realShipTargetColumnH] = 'X';
 
         } else {
-            System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~> You missed a target! (M addded)\n");
-            seaCPU[realShipTargetRow][realShipTargetColumn] = 'M';
+            System.out.println("\n~~~> You missed a target! (M addded)");
+            seaCPU[realShipTargetRowH][realShipTargetColumnH] = 'M';
         }
 
 
@@ -383,20 +507,20 @@ class Battleship {
 
     public static void placeTargetCPU(char[][] seaHuman) {
 
-        realShipTargetRow = shipTargetRow + 1;
-        realShipTargetColumn = (shipTargetColumn * 2) + 3;
+        realShipTargetRowC = shipTargetRowC + 1;
+        realShipTargetColumnC = (shipTargetColumnC * 2) + 3;
 
-        if (seaHuman[realShipTargetRow][realShipTargetColumn] == 'D' ||
-                seaHuman[realShipTargetRow][realShipTargetColumn] == 'C' ||
-                seaHuman[realShipTargetRow][realShipTargetColumn] == 'B' ||
-                seaHuman[realShipTargetRow][realShipTargetColumn] == 'A') {
+        if (seaHuman[realShipTargetRowC][realShipTargetColumnC] == 'D' ||
+                seaHuman[realShipTargetRowC][realShipTargetColumnC] == 'C' ||
+                seaHuman[realShipTargetRowC][realShipTargetColumnC] == 'B' ||
+                seaHuman[realShipTargetRowC][realShipTargetColumnC] == 'A') {
 
-            System.out.println("\n================================> Computer hit a human ship! (X added)\n");
-            seaHuman[realShipTargetRow][realShipTargetColumn] = 'X';
+            System.out.println("\n===> Computer hit a human ship! (X added)");
+            seaHuman[realShipTargetRowC][realShipTargetColumnC] = 'X';
 
         } else {
-            System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~> Computer missed a target! (M added)\n");
-            seaHuman[realShipTargetRow][realShipTargetColumn] = 'M';
+            System.out.println("\n~~~> Computer missed a target! (M added)");
+            seaHuman[realShipTargetRowC][realShipTargetColumnC] = 'M';
         }
 
     }
