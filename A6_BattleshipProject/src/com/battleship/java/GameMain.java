@@ -2,7 +2,7 @@ package com.battleship.java;
 
 import java.util.*;
 
-public class Battleship extends Ship {
+public class GameMain extends Ship {
 
     public static void main(String[] args) {
 
