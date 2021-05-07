@@ -1,5 +1,6 @@
 package com.battleship.java;
 
+
 public abstract class Ship{
 
 
@@ -37,28 +38,11 @@ public abstract class Ship{
     public static boolean gameOver = false;
 
 
-    private static String player1Name;
-    private static String player2Name;
-
-    public static String getPlayer1Name() {
-
-        return player1Name;
-    }
-
-    public static String getPlayer2Name() {
-        return player2Name;
-    }
+    public static String player1Name;
+    public static String player2Name;
 
 
-    public static void setPlayer1Name(String player1Name) {
-        Ship.player1Name = player1Name;
-    }
-
-    public static void setPlayer2Name(String player2Name) {
-        Ship.player2Name = player2Name;
-    }
-
-
+    
     // This is a grid for human sea
     public static char[][] seaHuman = new char[][]
             {{' ', ' ', ' ', '0', ' ', '1', ' ', '2', ' ', '3', ' ', '4', ' ', '5', ' ', '6', ' ', '7', ' ', '8', ' ', '9'},
@@ -110,8 +94,6 @@ public abstract class Ship{
 
 
 
-
-
     public static void countShipsHuman(char[][] seaHuman) {
 
         int countD = 0;
@@ -136,29 +118,29 @@ public abstract class Ship{
             }
         }
 
-        System.out.println("\n" + getPlayer1Name() + "'s" + " Ships: Destroyer(" + countD + "/" + "2)" + " " + "Cruiser(" + countC + "/" + "3)" + " " +
+        System.out.println("\n" + player1Name + "'s" + " Ships: Destroyer(" + countD + "/" + "2)" + " " + "Cruiser(" + countC + "/" + "3)" + " " +
                 "Battleship(" + countB + "/" + "4)" + " " + "Aircraft Carrier(" + countA + "/" + "5)");
 
 
         if (countD == 0) {
-            System.out.println("- " + getPlayer1Name() + "'s" + " destroyer has sunk!");
+            System.out.println("- " + player1Name + "'s" + " destroyer has sunk!");
         }
 
         if (countC == 0) {
-            System.out.println("- " + getPlayer1Name() + "'s" + " cruiser has sunk!");
+            System.out.println("- " + player1Name + "'s" + " cruiser has sunk!");
 
         }
 
         if (countB == 0) {
-            System.out.println("- " + getPlayer1Name() + "'s" + " battleship has sunk!");
+            System.out.println("- " + player1Name + "'s" + " battleship has sunk!");
         }
 
         if (countA == 0) {
-            System.out.println("- " + getPlayer1Name() + "'s" + " aircraft carrier has sunk!");
+            System.out.println("- " + player1Name + "'s" + " aircraft carrier has sunk!");
         }
 
         if (countD == 0 && countC == 0 && countB == 0 && countA == 0) {
-            System.out.println("- All of " + getPlayer1Name() + "'s" + " ships have sunk!\n" +
+            System.out.println("- All of " + player1Name + "'s" + " ships have sunk!\n" +
                     "============== Game Over ===============");
             gameOver = true;
         }
@@ -194,29 +176,29 @@ public abstract class Ship{
         }
 
 
-        System.out.println("\n" + getPlayer2Name() + "'s" + " Ships: Destroyer(" + countD + "/" + "2)" + " " + "Cruiser(" + countC + "/" + "3)" + " " +
+        System.out.println("\n" + player2Name + "'s" + " Ships: Destroyer(" + countD + "/" + "2)" + " " + "Cruiser(" + countC + "/" + "3)" + " " +
                 "Battleship(" + countB + "/" + "4)" + " " + "Aircraft Carrier(" + countA + "/" + "5)");
 
 
         if (countD == 0) {
-            System.out.println("- " + getPlayer2Name() + "'s" + " destroyer has sunk!");
+            System.out.println("- " + player2Name + "'s" + " destroyer has sunk!");
         }
 
         if (countC == 0) {
-            System.out.println("- " + getPlayer2Name() + "'s" + " cruiser has sunk!");
+            System.out.println("- " + player2Name + "'s" + " cruiser has sunk!");
 
         }
 
         if (countB == 0) {
-            System.out.println("- " + getPlayer2Name() + "'s" + " battleship has sunk!");
+            System.out.println("- " + player2Name + "'s" + " battleship has sunk!");
         }
 
         if (countA == 0) {
-            System.out.println("- " + getPlayer2Name() + "'s" + " aircraft carrier has sunk!");
+            System.out.println("- " + player2Name + "'s" + " aircraft carrier has sunk!");
         }
 
         if (countD == 0 && countC == 0 && countB == 0 && countA == 0) {
-            System.out.println("- All of " + getPlayer2Name() + "'s" + " ships have sunk!\n" +
+            System.out.println("- All of " + player2Name + "'s" + " ships have sunk!\n" +
                     "============== Game Over ===============");
             gameOver = true;
         }
@@ -258,14 +240,14 @@ public abstract class Ship{
                 seaCPU[realShipTargetRowH][realShipTargetColumnH] == 'B' ||
                 seaCPU[realShipTargetRowH][realShipTargetColumnH] == 'A') {
 
-            System.out.println("===> " + getPlayer1Name() + " hit a " + getPlayer2Name() + "'s" + " ship! X added at " + "("+ shipTargetRowH + ", " + shipTargetColumnH+").");
+            System.out.println("===> " + player1Name + " hit a " + player2Name + "'s" + " ship! X added at " + "("+ shipTargetRowH + ", " + shipTargetColumnH+").");
             seaCPU[realShipTargetRowH][realShipTargetColumnH] = 'X';
             seaResultCPU[realShipTargetRowH][realShipTargetColumnH] = 'X';
 
 
 
         } else {
-            System.out.println("~~~> " + getPlayer1Name() + " missed a target! M added at " + "("+ shipTargetRowH + ", " + shipTargetColumnH+").");
+            System.out.println("~~~> " + player1Name + " missed a target! M added at " + "("+ shipTargetRowH + ", " + shipTargetColumnH+").");
             seaCPU[realShipTargetRowH][realShipTargetColumnH] = 'M';
             seaResultCPU[realShipTargetRowH][realShipTargetColumnH] = 'M';
         }
@@ -297,11 +279,11 @@ public abstract class Ship{
                 seaHuman[realShipTargetRowC][realShipTargetColumnC] == 'B' ||
                 seaHuman[realShipTargetRowC][realShipTargetColumnC] == 'A') {
 
-            System.out.println("===> " + getPlayer2Name() + " hit a " + getPlayer1Name() + "'s" + " ship! X added at " + "("+ shipTargetRowC + ", " + shipTargetColumnC+").\n");
+            System.out.println("===> " + player2Name + " hit a " + player1Name + "'s" + " ship! X added at " + "("+ shipTargetRowC + ", " + shipTargetColumnC+").\n");
             seaHuman[realShipTargetRowC][realShipTargetColumnC] = 'X';
 
         } else {
-            System.out.println("~~~> " + getPlayer2Name() + " missed a target! M added at " + "("+ shipTargetRowC + ", " + shipTargetColumnC+").\n");
+            System.out.println("~~~> " + player2Name + " missed a target! M added at " + "("+ shipTargetRowC + ", " + shipTargetColumnC+").\n");
             seaHuman[realShipTargetRowC][realShipTargetColumnC] = 'M';
         }
 

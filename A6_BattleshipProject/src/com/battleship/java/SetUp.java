@@ -6,6 +6,7 @@ public class SetUp extends Ship {
 
 
 
+
     public static void SettingNames() {
 
 
@@ -13,23 +14,25 @@ public class SetUp extends Ship {
         System.out.println("Battleship Multiplayer\n" +
                 "Enter Player 1 name:");
         Scanner name1 = new Scanner(System.in);
-        String player1Name = name1.nextLine();
+        player1Name = name1.nextLine();
 
 
         System.out.println("Enter Player 2 name:");
         Scanner name2 = new Scanner(System.in);
-        String player2Name = name2.nextLine();
+        player2Name = name2.nextLine();
 
 
 
     }
 
 
+
+
     public static void SettingShips(){
 
         System.out.println("------------------------- "+
 
-                Ship.getPlayer1Name() +"'s"+" ships shown below ---------------");
+                player1Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaHuman(Ship.seaHuman);
 
@@ -46,7 +49,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer1Name() +"'s"+" Ships:\n"+
+                player1Name +"'s"+" Ships:\n"+
                 "Please place a Destroyer (Size 2):\n"+
                 "Choose a row (0-9):");
         Scanner rowDestroyerHuman = new Scanner(System.in);
@@ -64,7 +67,7 @@ public class SetUp extends Ship {
         Ship.placePieceHuman(Ship.seaHuman, "destroyer");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer1Name() +"'s"+" ships shown below ---------------");
+                player1Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaHuman(Ship.seaHuman);
 
@@ -73,7 +76,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer1Name() +"'s"+" \n"+
+                player1Name +"'s"+" \n"+
                 "Please place a Cruiser (Size 3):\n"+
                 "Choose a row (0-9):");
         Scanner rowCruiserHuman = new Scanner(System.in);
@@ -90,7 +93,7 @@ public class SetUp extends Ship {
         Ship.placePieceHuman(Ship.seaHuman, "cruiser");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer1Name() +"'s"+" ships shown below ---------------");
+                player1Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaHuman(Ship.seaHuman);
 
@@ -100,7 +103,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer1Name() +"'s"+" \n"+
+                player1Name +"'s"+" \n"+
                 "Please place a Battleship (Size 4):\n"+
                 "Choose a row (0-9):");
         Scanner rowBattleshipHuman = new Scanner(System.in);
@@ -117,7 +120,7 @@ public class SetUp extends Ship {
         Ship.placePieceHuman(Ship.seaHuman, "battleship");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer1Name() +"'s"+" ships shown below ---------------");
+                player1Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaHuman(Ship.seaHuman);
 
@@ -127,7 +130,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer1Name() +"'s"+" \n"+
+                player1Name +"'s"+" \n"+
                 "Please place a Aircraft Carrier (Size 5):\n"+
                 "Choose a row (0-9):");
         Scanner rowAircraftCarrierHuman = new Scanner(System.in);
@@ -144,19 +147,19 @@ public class SetUp extends Ship {
         Ship.placePieceHuman(Ship.seaHuman, "aircraftCarrier");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer1Name() +"'s"+" ships shown below ---------------");
+                player1Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaHuman(Ship.seaHuman);
 
 
         System.out.println("------------------------- "+
 
-                Ship.getPlayer2Name() +"'s"+" ships shown below ---------------");
+                player2Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaCPU(Ship.seaCPU);
         System.out.println("\nNext "+
 
-                Ship.getPlayer2Name() +" will place the ships:");
+                player2Name +" will place the ships:");
 
 
         // Randomly will place Computer Ships
@@ -172,7 +175,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer2Name() +"'s"+" Ships:\n"+
+                player2Name +"'s"+" Ships:\n"+
                 "Please place a Destroyer (Size 2):\n"+
                 "Choose a row (0-9):");
         Scanner rowDestroyerCPU = new Scanner(System.in);
@@ -190,7 +193,7 @@ public class SetUp extends Ship {
         Ship.placePieceCPU(Ship.seaCPU, "destroyer");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer2Name() +"'s"+" ships shown below ---------------");
+                player2Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaCPU(Ship.seaCPU);
 
@@ -200,7 +203,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer2Name() +"'s"+" Ships:\n"+
+                player2Name +"'s"+" Ships:\n"+
                 "Please place a Cruiser (Size 3):\n"+
                 "Choose a row (0-9):");
         Scanner rowCruiserCPU = new Scanner(System.in);
@@ -217,7 +220,7 @@ public class SetUp extends Ship {
         Ship.placePieceCPU(Ship.seaCPU, "cruiser");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer2Name() +"'s"+" ships shown below ---------------");
+                player2Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaCPU(Ship.seaCPU);
 
@@ -227,7 +230,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer2Name() +"'s"+" Ships:\n"+
+                player2Name +"'s"+" Ships:\n"+
                 "Please place a Battleship (Size 4):\n"+
                 "Choose a row (0-9):");
         Scanner rowBattleshipCPU = new Scanner(System.in);
@@ -244,7 +247,7 @@ public class SetUp extends Ship {
         Ship.placePieceCPU(Ship.seaCPU, "battleship");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer2Name() +"'s"+" ships shown below ---------------");
+                player2Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaCPU(Ship.seaCPU);
 
@@ -254,7 +257,7 @@ public class SetUp extends Ship {
         Ship.shipPosColumn =0;
         System.out.println("\nPlacing "+
 
-                Ship.getPlayer2Name() +"'s"+" Ships:\n"+
+                player2Name +"'s"+" Ships:\n"+
                 "Please place a Aircraft Carrier (Size 5):\n"+
                 "Choose a row (0-9):");
         Scanner rowAircraftCarrierCPU = new Scanner(System.in);
@@ -271,7 +274,7 @@ public class SetUp extends Ship {
         Ship.placePieceCPU(Ship.seaCPU, "aircraftCarrier");
         System.out.println("------------------------- "+
 
-                Ship.getPlayer2Name() +"'s"+" ships shown below ---------------");
+                player2Name +"'s"+" ships shown below ---------------");
 
         Ship.printSeaCPU(Ship.seaCPU);
 

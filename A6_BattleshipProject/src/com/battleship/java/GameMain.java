@@ -13,9 +13,9 @@ public class GameMain extends Ship {
         System.out.println("\n============================================\n" +
                 "=============== Let's begin! ===============\n" +
                 "============================================\n");
-        System.out.println("------------------------- " + getPlayer1Name() + "'s" + " ships shown below ---------------");
+        System.out.println("------------------------- " + player1Name + "'s" + " ships shown below ---------------");
         printSeaHuman(seaHuman);
-        System.out.println("------------------------- " + getPlayer2Name() + "'s" + " ships shown below ---------------");
+        System.out.println("------------------------- " + player2Name + "'s" + " ships shown below ---------------");
         printSeaResultCPU(seaResultCPU);
 
 
@@ -25,7 +25,7 @@ public class GameMain extends Ship {
             shipTargetRowH = 0;
             shipTargetColumnH = 0;
 
-            System.out.println("\n" + getPlayer1Name() + "'s" + " turn:\n" + "What is " + getPlayer1Name() + "'s" + " next target? [row][column]");
+            System.out.println("\n" + player1Name + "'s" + " turn:\n" + "What is " + player1Name + "'s" + " next target? [row][column]");
             System.out.println("Target Row (0-9): ");
             Scanner targetRow = new Scanner(System.in);
             shipTargetRowH = targetRow.nextInt();
@@ -47,7 +47,7 @@ public class GameMain extends Ship {
             int cpuTargetColumn = randCol.nextInt(9) + 1;
             shipTargetColumnC = cpuTargetColumn;
 
-            System.out.println("\n" + getPlayer2Name() + "'s" + " turn:\n" + getPlayer2Name() + " has made a guess: ");
+            System.out.println("\n" + player2Name + "'s" + " turn:\n" + player2Name + " has made a guess: ");
 
             System.out.println("\n============================================\n" +
                     "============ Here is the result ============\n" +
@@ -59,10 +59,10 @@ public class GameMain extends Ship {
             placeTargetHuman(seaCPU);
             placeTargetCPU(seaHuman);
 
-            System.out.println("------------------------- " + getPlayer1Name() + "'s" + " ships shown below ---------------");
+            System.out.println("------------------------- " + player1Name + "'s" + " ships shown below ---------------");
             printSeaCPU(seaHuman);
 
-            System.out.println("------------------------- " + getPlayer2Name() + "'s" + " ships shown below ---------------");
+            System.out.println("------------------------- " + player2Name + "'s" + " ships shown below ---------------");
             printSeaResultCPU(seaResultCPU);
 
             countShipsHuman(seaHuman);
