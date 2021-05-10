@@ -105,10 +105,17 @@ public class Hangman {
                 hangmanImage();
                 int attemptsRemaining = 7 - count;
                 System.out.println("You've got " + attemptsRemaining + " Attempts Remaining.");
-                System.out.println("Guess a letter.");
-                System.out.println(underline);
-                String guess = sc.next();
-                hang(guess);
+
+
+                try {
+                    System.out.println("Guess a letter.");
+                    System.out.println(underline);
+                    guess = sc.next();
+                    hang(guess);
+                } catch (Exception e) {
+                    System.out.println("Please enter a single letter.");
+                }
+
                 repeatMissedLetters(guess);
                 repeatMessage();
                 wrongGuess(guess);

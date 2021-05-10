@@ -100,42 +100,47 @@ class HumansVsGoblins {
 
 
 
+                try {
+                    Scanner scan = new Scanner(System.in);
+                    System.out.println("What is your next move? (n/s/e/w)");
+                    char nextHumanPos = scan.next().charAt(0);
 
+                    if (nextHumanPos == 'n') {
+                        humanPos = humanPos - 10;
+                        if (humanPos < 1) {
+                            humanPos = humanPos + 100;
 
-                Scanner scan = new Scanner(System.in);
-                System.out.println("What is your next move? (n/s/e/w)");
-                char nextHumanPos = scan.next().charAt(0);
+                        }
+                    }
 
+                    if (nextHumanPos == 's') {
+                        humanPos = humanPos + 10;
+                        if (humanPos > 100) {
+                            humanPos = humanPos - 100;
 
-                if (nextHumanPos == 'n') {
-                    humanPos = humanPos - 10;
-                    if (humanPos < 1) {
-                        humanPos = humanPos + 100;
+                        }
 
                     }
 
-                } else if (nextHumanPos == 's') {
-                    humanPos = humanPos + 10;
-                    if (humanPos > 100) {
-                        humanPos = humanPos - 100;
+                    if (nextHumanPos == 'e') {
+                        humanPos = humanPos + 1;
+                        if (humanPos > 100) {
+                            humanPos = humanPos - 100;
 
+                        }
                     }
 
-                } else if (nextHumanPos == 'e') {
-                    humanPos = humanPos + 1;
-                    if (humanPos > 100) {
-                        humanPos = humanPos - 100;
+                    if (nextHumanPos == 'w') {
+                        humanPos = humanPos - 1;
+                        if (humanPos < 1) {
+                            humanPos = humanPos + 100;
 
+                        }
                     }
 
-                } else if (nextHumanPos == 'w') {
-                    humanPos = humanPos - 1;
-                    if (humanPos < 1) {
-                        humanPos = humanPos + 100;
-
-                    }
+                } catch (Exception e) {
+                    System.out.println("Please enter one of the 4 letters: n/s/e/w.");
                 }
-
 
 
                 while (humanPositions.contains(humanPos) || goblinPositions.contains(humanPos) ||
