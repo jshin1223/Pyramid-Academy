@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Hangman {
@@ -82,6 +83,8 @@ public class Hangman {
 
             gameCount();
 
+
+
             System.out.println("Do you want to play again? (y or n)");
             Scanner playAgain = new Scanner(System.in);
             userAnswer = playAgain.next().charAt(0);
@@ -97,24 +100,22 @@ public class Hangman {
 
 
         do {
-            hangmanImage();
-            int attemptsRemaining = 7 - count;
-            System.out.println("You've got " + attemptsRemaining + " Attempts Remaining.");
-            System.out.println("Guess a letter.");
-            System.out.println(underline);
-            String guess = sc.next();
-
-            hang(guess);
 
 
+                hangmanImage();
+                int attemptsRemaining = 7 - count;
+                System.out.println("You've got " + attemptsRemaining + " Attempts Remaining.");
+                System.out.println("Guess a letter.");
+                System.out.println(underline);
+                String guess = sc.next();
+                hang(guess);
+                repeatMissedLetters(guess);
+                repeatMessage();
+                wrongGuess(guess);
+                underlineCheck(guess);
+                underlineCheckMessage();
 
-            repeatMissedLetters(guess);
-            repeatMessage();
 
-
-            wrongGuess(guess);
-            underlineCheck(guess);
-            underlineCheckMessage();
 
 
         } while (count < 7 && underline.contains("-"));
@@ -127,18 +128,14 @@ public class Hangman {
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == guess.charAt(0)) {
                 newUnderline += guess.charAt(0);
-
             } else if (underline.charAt(i) != '-') {
                 newUnderline += word.charAt(i);
-
             } else {
                 newUnderline += "-";
-
             }
         }
 
         for (int i = 0; i < word.length(); i++) {
-
         }
 
 
@@ -149,12 +146,13 @@ public class Hangman {
             underline = newUnderline;
         }
 
-
         if (underline.equals(word)) {
             System.out.println("Yes! The secret word was " + "\"" + word + "\"" + "! You have won!");
 
-
         }
+
+
+
     }
 
 

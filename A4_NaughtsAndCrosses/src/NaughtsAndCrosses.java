@@ -58,17 +58,28 @@ public class NaughtsAndCrosses {
 
             while(true) {
 
-                Scanner scan = new Scanner(System.in);
-                System.out.println("What is your next move? (1-9)");
-                int playerPos = scan.nextInt();
-                while (playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)) {
-                    System.out.println("Position taken! Enter a correct Position.");
-                    playerPos = scan.nextInt();
-                }
 
-                placePiece(gameBoard, playerPos, "player");
-                printGameBoard(gameBoard);
-                System.out.println("The player(X) has chosen the next position.\n");
+
+               try {
+
+                   Scanner scan = new Scanner(System.in);
+                   System.out.println("What is your next move? (1-9)");
+                   int playerPos = scan.nextInt();
+
+                   while (playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)) {
+                       System.out.println("Position taken! Enter a correct Position.");
+                       playerPos = scan.nextInt();
+                   }
+
+                   placePiece(gameBoard, playerPos, "player");
+                   printGameBoard(gameBoard);
+                   System.out.println("The player(X) has chosen the next position.\n");
+
+               } catch (InputMismatchException e) {
+                   System.out.println("Input should be a number between 1 and 9.");
+                   break;
+               }
+
 
 
                 String result = checkWinner();
@@ -77,8 +88,6 @@ public class NaughtsAndCrosses {
                     System.out.println(result);
                     break;
                 }
-
-
 
 
                 Random rand = new Random();
