@@ -1,3 +1,8 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class Encoding {
     private int mKey;
     private String mInputText;
@@ -53,6 +58,19 @@ public class Encoding {
                 encoded += alphabet.charAt(key);
             }
         }
+
+        try {
+
+            FileWriter encodedText = new FileWriter("text.txt");
+            encodedText.write(encoded);
+            encodedText.close();
+            System.out.println("Successfully wrote to the file.");
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+
+        }
+
         return encoded;
     }
 }
