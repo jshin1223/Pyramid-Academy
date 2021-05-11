@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+import javax.swing.text.html.ImageView;
 
 public class HangmanTwo {
 
@@ -243,113 +244,126 @@ public class HangmanTwo {
 
 
 
-    private static void showImage(final String fileName)
-    {
-//        SwingUtilities.invokeLater(new Runnable()
-//        {
-//            @Override
-//            public void run()
-//            {
-//                JFrame f = new JFrame();
-//                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-//                f.getContentPane().setLayout(new GridLayout(1,1));
-//                f.getContentPane().add(new JLabel(new ImageIcon(fileName)));
-//                f.pack();
-//                f.setLocationRelativeTo(null);
-//                f.setVisible(true);
-//            }
-//        });
-
-
-    }
-
-
-
-
-    public static void hangmanImage() {
+    public static <StackPane, Scene> void hangmanImage() {
         if (count == 0) {
 
 
-
-            try {
-
-                ImageIO.read(new File("images/0.jpg"));
-                //System.out.println(image);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
+            String fileName = "images/0.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
 
             System.out.println("Missed letters" + ": " + missedLetters + "\n");
 
         }
         if (count == 1) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("       |");
-            System.out.println("       |");
-            System.out.println("       |");
-            System.out.println("      ===");
+
+
+            String fileName = "images/1.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
+
             System.out.println("Missed letters" + ": " + missedLetters + "\n" + repeatMessage);
         }
         if (count == 2) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("   O   |");
-            System.out.println("       |");
-            System.out.println("       |");
-            System.out.println("      ===");
+
+            String fileName = "images/2.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
             System.out.println("Missed letters" + ": " + missedLetters + "\n" + repeatMessage);
 
         }
         if (count == 3) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("   O   |");
-            System.out.println("   |   |");
-            System.out.println("       |");
-            System.out.println("      ===");
+
+            String fileName = "images/3.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
             System.out.println("Missed letters" + ": " + missedLetters + "\n" + repeatMessage);
 
         }
         if (count == 4) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("   O   |");
-            System.out.println("  /|   |");
-            System.out.println("       |");
-            System.out.println("      ===");
+
+            String fileName = "images/4.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
             System.out.println("Missed letters" + ": " + missedLetters + "\n" + repeatMessage);
 
         }
         if (count == 5) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("   O   |");
-            System.out.println("  /|\\  |");
-            System.out.println("       |");
-            System.out.println("      ===");
+
+            String fileName = "images/5.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
             System.out.println("Missed letters" + ": " + missedLetters + "\n" + repeatMessage);
 
         }
         if (count == 6) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("   O   |");
-            System.out.println("  /|\\  |");
-            System.out.println("  /    |");
-            System.out.println("      ===");
+
+            String fileName = "images/6.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
             System.out.println("Missed letters" + ": " + missedLetters + "\n" + repeatMessage);
 
         }
         if (count == 7) {
-            System.out.println("   +----+");
-            System.out.println("   |   |");
-            System.out.println("   O   |");
-            System.out.println("  /|\\  |");
-            System.out.println("  / \\  |");
-            System.out.println("      ===");
+
+            String fileName = "images/7.jpg";
+            ImageIcon icon = new ImageIcon(fileName);
+            JLabel label = new JLabel(icon);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.getContentPane().add(new JScrollPane(label));
+            f.setSize(400,400);
+            f.setLocation(200,200);
+            f.setVisible(true);
+
             System.out.println("Game Over! The secret word was " + "\"" + word + "\"" + "!");
 
         }
