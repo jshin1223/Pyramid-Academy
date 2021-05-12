@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Decoding {
 
+    String data;
+
     public String decodedValue;
     private int mKey;
     private String mInputText;
@@ -26,17 +28,30 @@ public class Decoding {
 
         }
 
+        try {
+            File myText = new File("text.txt");
+            Scanner myReader = new Scanner(myText);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println("Reading the file to decrypt...\n" + "\"" + data + "\"" + " was read from the file.\n");
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred. File not found.");
+            e.printStackTrace();
+        }
+
 
     }
     public String getInputText() {
-        return mInputText;
+        return data;
     }
     public int getKey() {
         return mKey;
     }
     public boolean isValidInputText()
     {
-        char[] chars = mInputText.toCharArray();
+        char[] chars = data.toCharArray();
 
         for (char c : chars) {
             if(!Character.isLetter(c) && c != ' ') {
@@ -47,7 +62,7 @@ public class Decoding {
     }
     public boolean isValidKey()
     {
-        return mKey >1 && mKey < 52;
+        return mKey >1 && mKey < 54;
     }
 
     public String decode()
@@ -62,28 +77,28 @@ public class Decoding {
             System.out.println("\"" + data + "\"" + " is being decrypted...\n");
 
             decodedValue = "";
-        String encodedArray[] = data.split("");
-        String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for (int i = 0; i<encodedArray.length;i++)
-        {
-            if (data.charAt(i) == ' ')
+            String encodedArray[] = data.split("");
+            String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
+            for (int i = 0; i<encodedArray.length;i++)
             {
-                decodedValue += " ";
-            }
-            else
-            {
-                int charPosition = alphabet.indexOf(data.charAt(i));
-                int keyVal = (charPosition - mKey) % 52;
-
-                if (keyVal < 0)
+                if (data.charAt(i) == ' ')
                 {
-                    keyVal = alphabet.length() + keyVal;
+                    decodedValue += " ";
                 }
+                else
+                {
+                    int charPosition = alphabet.indexOf(data.charAt(i));
+                    int keyVal = (charPosition - mKey) % 54;
 
-                char replaceValue = alphabet.charAt(keyVal);
-                decodedValue += replaceValue;
+                    if (keyVal < 0)
+                    {
+                        keyVal = alphabet.length() + keyVal;
+                    }
+
+                    char replaceValue = alphabet.charAt(keyVal);
+                    decodedValue += replaceValue;
+                }
             }
-        }
 
 
             return decodedValue;

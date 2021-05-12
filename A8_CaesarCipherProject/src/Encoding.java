@@ -36,7 +36,7 @@ public class Encoding {
     }
     public boolean isValidKey()
     {
-        return mKey >1 && mKey < 52;
+        return mKey >1 && mKey < 54;
 
     }
 
@@ -44,7 +44,7 @@ public class Encoding {
     {
         String encoded = "";
         String encodedArray[] = mInputText.split("");
-        String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
         for (int i = 0; i<encodedArray.length;i++)
         {
             if (mInputText.charAt(i) == ' ')
@@ -54,7 +54,7 @@ public class Encoding {
             else
             {
                 int charPosition = alphabet.indexOf(mInputText.charAt(i));
-                int key = (mKey + charPosition) % 52;
+                int key = (mKey + charPosition) % 54;
                 encoded += alphabet.charAt(key);
             }
         }
