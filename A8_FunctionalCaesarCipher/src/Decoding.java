@@ -62,28 +62,28 @@ public class Decoding {
             System.out.println("\"" + data + "\"" + " is being decrypted...\n");
 
             decodedValue = "";
-        String encodedArray[] = data.split("");
-        String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for (int i = 0; i<encodedArray.length;i++)
-        {
-            if (data.charAt(i) == ' ')
+            String encodedArray[] = data.split("");
+            String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (int i = 0; i<encodedArray.length;i++)
             {
-                decodedValue += " ";
-            }
-            else
-            {
-                int charPosition = alphabet.indexOf(data.charAt(i));
-                int keyVal = (charPosition - mKey) % 52;
-
-                if (keyVal < 0)
+                if (data.charAt(i) == ' ')
                 {
-                    keyVal = alphabet.length() + keyVal;
+                    decodedValue += " ";
                 }
+                else
+                {
+                    int charPosition = alphabet.indexOf(data.charAt(i));
+                    int keyVal = (charPosition - mKey) % 52;
 
-                char replaceValue = alphabet.charAt(keyVal);
-                decodedValue += replaceValue;
+                    if (keyVal < 0)
+                    {
+                        keyVal = alphabet.length() + keyVal;
+                    }
+
+                    char replaceValue = alphabet.charAt(keyVal);
+                    decodedValue += replaceValue;
+                }
             }
-        }
 
 
             return decodedValue;
