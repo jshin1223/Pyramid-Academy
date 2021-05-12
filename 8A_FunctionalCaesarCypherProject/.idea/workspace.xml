@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f37061d-65b3-4437-8e8a-cdc81538497d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/.idea/ClojureProjectResolveSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/A8_FunctionalCaesarCipher.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/out/production/A8_FunctionalCaesarCipher/Decoding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/out/production/A8_FunctionalCaesarCipher/Encoding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/out/production/A8_FunctionalCaesarCipher/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/src/Decoding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/src/Encoding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A8_FunctionalCaesarCipher/text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1sRiripBPsOj2seToWOEx8IRMYJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="copyright" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f37061d-65b3-4437-8e8a-cdc81538497d" name="Default Changelist" comment="" />
+      <created>1620842003121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620842003121</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
