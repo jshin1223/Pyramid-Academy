@@ -73,6 +73,7 @@ public class HangmanTwo {
     public static int countCorrect;
     public static int countRepeat;
     public static int countUnderlineRepeat;
+    public static int getCountCorrect = 0;
 
 
     public static void main(String[] args) {
@@ -181,6 +182,7 @@ public class HangmanTwo {
                 .map(s -> {
                     if (correctGuesses.isLetterCorrectGuess(s)) {
                         return s;
+
                     } else {
                         return "-";
                     }
@@ -218,13 +220,18 @@ public class HangmanTwo {
 
 
         // old code
-        for (i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == guess.charAt(0)) {
-                countCorrect++;
-                repeatMessage = "";
-            }
-        }
+//        for (i = 0; i < word.length(); i++) {
+//            if (word.charAt(i) == guess.charAt(0)) {
+//                countCorrect++;
+//                repeatMessage = "";
+//            }
+//        }
 
+
+        if (correctGuesses.isLetterCorrectGuess(guess)) {
+            countCorrect = 1;
+
+        }
 
 
 
@@ -251,6 +258,8 @@ public class HangmanTwo {
             if (underline.charAt(i) == guess.charAt(0))
                 countUnderlineRepeat++;
         }
+
+
     }
 
     public static void underlineCheckMessage () {
@@ -269,9 +278,16 @@ public class HangmanTwo {
         repeatMessage = "";
 
         // old code
-        for (i = 0; i < missedLetters.length(); i++) {
-            if (missedLetters.charAt(i) == guess.charAt(0))
-                countRepeat++;
+//        for (i = 0; i < missedLetters.length(); i++) {
+//            if (missedLetters.charAt(i) == guess.charAt(0))
+//                countRepeat++;
+//        }
+//
+
+        if (missedLetters.contains(guess)) {
+
+            countRepeat = 1;
+
         }
     }
 
