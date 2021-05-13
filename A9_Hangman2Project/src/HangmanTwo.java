@@ -1,4 +1,6 @@
+import javax.naming.ConfigurationException;
 import javax.swing.*;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
@@ -76,9 +78,39 @@ public class HangmanTwo {
     public static int getCountCorrect = 0;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        do {
+
+
+
+
+
+
+            do {
+
+                FileReader.displayScores();
+
+            System.out.print("Welcome to Hangman!\n\n" + "Please enter your name: ");
+
+
+
+
+
+            Scanner scanner = new Scanner(System.in);
+            String name = scanner.nextLine();
+
+
+            try{
+                FileWriter recordName = new FileWriter("record.txt",true);
+                BufferedWriter out = new BufferedWriter(recordName);
+                out.write(name + ", ");
+                out.close();
+                System.out.println("\nSuccessfully recorded you name.\n");
+            }catch (Exception e){
+                System.err.println("Error while writing to file: " +
+                        e.getMessage());
+            }
+
 
             count = 0;
             missedLetters = "";
@@ -89,7 +121,7 @@ public class HangmanTwo {
             correctGuesses = new CorrectGuesses(word);
 
 
-            System.out.println(word);
+            System.out.println("(Answer: " + word + ")\n");
 
             // old code
 //            newUnderline = "";
@@ -201,6 +233,23 @@ public class HangmanTwo {
 
         if (underline.equals(word)) {
             System.out.println("Yes! The secret word was " + "\"" + word + "\"" + "! You have won!");
+
+
+            int score = 1;
+
+            try{
+                FileWriter recordScore = new FileWriter("record.txt",true);
+                BufferedWriter out = new BufferedWriter(recordScore);
+                out.write(score + "\n");
+                out.close();
+                System.out.println("\nSuccessfully recorded you score.\n");
+            }catch (Exception e){
+                System.err.println("Error while writing to file: " +
+                        e.getMessage());
+            }
+
+
+
 
         }
 
