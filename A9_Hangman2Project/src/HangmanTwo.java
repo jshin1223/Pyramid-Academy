@@ -1,11 +1,12 @@
 import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
-import java.util.Scanner;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.imageio.ImageIO;
-import javax.swing.text.html.ImageView;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class HangmanTwo {
 
@@ -57,6 +58,10 @@ public class HangmanTwo {
             "primitives",
             "traditional"};
     public static String word = words[(int) (Math.random() * words.length)];
+
+    public static CorrectGuesses correctGuesses = new CorrectGuesses(word);
+
+
     public static String underline = new String(new char[word.length()]).replace("\0", "-");
     public static int count = 0;
     public static Scanner sc;
@@ -73,19 +78,30 @@ public class HangmanTwo {
     public static void main(String[] args) {
 
         do {
+
             count = 0;
             missedLetters = "";
 
+
             String newWord = words[(int) (Math.random() * words.length)];
             word = newWord;
+            correctGuesses = new CorrectGuesses(word);
+
 
             System.out.println(word);
 
-            newUnderline = "";
-            for (int i = 0; i < word.length(); i++) {
-                newUnderline += "-";
-            }
-            underline = newUnderline;
+            // old code
+//            newUnderline = "";
+//
+//            for (int i = 0; i < word.length(); i++) {
+//                newUnderline += "-";
+//            }
+
+
+            underline = Arrays.stream(Arrays.stream(word.split(""))
+                    .map(s -> "-")
+                    .toArray(String[]::new))
+                    .collect(Collectors.joining());
 
             gameCount();
 
@@ -120,10 +136,14 @@ public class HangmanTwo {
                 System.out.println("Guess a letter.");
                 System.out.println(underline);
                 guess = sc.next();
+
+                correctGuesses.addGuess(guess);
+
                 hang(guess);
             } catch (Exception e) {
                 System.out.println("Please enter a single letter.");
             }
+
 
             repeatMissedLetters(guess);
             repeatMessage();
@@ -131,28 +151,43 @@ public class HangmanTwo {
             underlineCheck(guess);
             underlineCheckMessage();
 
-
-
-
         } while (count < 7 && underline.contains("-"));
     }
+
+
+
 
 
     public static void hang(String guess) {
         String newUnderline = "";
 
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == guess.charAt(0)) {
-                newUnderline += guess.charAt(0);
-            } else if (underline.charAt(i) != '-') {
-                newUnderline += word.charAt(i);
-            } else {
-                newUnderline += "-";
-            }
-        }
+// old code
 
-        for (int i = 0; i < word.length(); i++) {
-        }
+//        for (int i = 0; i < word.length(); i++) {
+//
+//            if (word.charAt(i) == guess.charAt(0)) {
+//                newUnderline += guess.charAt(0);
+//            } else if (underline.charAt(i) != '-') {
+//                newUnderline += word.charAt(i);
+//            } else {
+//                newUnderline += "-";
+//            }
+//
+//        }
+
+
+
+        newUnderline = Arrays.stream(Arrays.stream(word.split(""))
+                .map(s -> {
+                    if (correctGuesses.isLetterCorrectGuess(s)) {
+                        return s;
+                    } else {
+                        return "-";
+                    }
+                }).toArray(String[]::new))
+                .collect(Collectors.joining());
+
+
 
 
         if (underline.equals(newUnderline)) {
@@ -172,18 +207,27 @@ public class HangmanTwo {
     }
 
 
+
+
+
     public static void wrongGuess(String guess) {
 
         int i;
         int countCorrect;
         countCorrect = 0;
 
+
+        // old code
         for (i = 0; i < word.length(); i++) {
             if (word.charAt(i) == guess.charAt(0)) {
                 countCorrect++;
                 repeatMessage = "";
             }
         }
+
+
+
+
 
         if (countCorrect == 0) {
             if (countRepeat == 0 ) {
@@ -202,6 +246,7 @@ public class HangmanTwo {
 
         int i;
 
+        // old code
         for (i = 0; i < underline.length(); i++) {
             if (underline.charAt(i) == guess.charAt(0))
                 countUnderlineRepeat++;
@@ -223,6 +268,7 @@ public class HangmanTwo {
         countRepeat = 0;
         repeatMessage = "";
 
+        // old code
         for (i = 0; i < missedLetters.length(); i++) {
             if (missedLetters.charAt(i) == guess.charAt(0))
                 countRepeat++;

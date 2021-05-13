@@ -22,11 +22,15 @@ public class Encoding {
     {
         char[] chars = mInputText.toCharArray();
 
+
+        // old code
         for (char c : chars) {
             if(!Character.isLetter(c) && c != ' ') {
                 return false;
             }
         }
+
+
         return true;
     }
 

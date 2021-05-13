@@ -53,11 +53,14 @@ public class Decoding {
     {
         char[] chars = data.toCharArray();
 
+        // old code
         for (char c : chars) {
             if(!Character.isLetter(c) && c != ' ') {
                 return false;
             }
         }
+
+
         return true;
     }
     public boolean isValidKey()
@@ -79,6 +82,9 @@ public class Decoding {
             decodedValue = "";
             String encodedArray[] = data.split("");
             String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
+
+
+            // old code
             for (int i = 0; i<encodedArray.length;i++)
             {
                 if (data.charAt(i) == ' ')
@@ -99,6 +105,7 @@ public class Decoding {
                     decodedValue += replaceValue;
                 }
             }
+
 
 
             return decodedValue;
