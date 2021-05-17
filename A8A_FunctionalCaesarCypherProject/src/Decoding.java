@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Decoding {
 
@@ -105,6 +107,19 @@ public class Decoding {
                     decodedValue += replaceValue;
                 }
             }
+
+
+            newUnderline = Arrays.stream(Arrays.stream(word.split(""))
+                    .map(s -> {
+                        if (correctGuesses.isLetterCorrectGuess(s)) {
+                            return s;
+
+                        } else {
+                            return "-";
+                        }
+                    }).toArray(String[]::new))
+                    .collect(Collectors.joining());
+
 
 
 

@@ -49,6 +49,8 @@ public class Encoding {
         String encoded = "";
         String encodedArray[] = mInputText.split("");
         String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
+
+        // old code
         for (int i = 0; i<encodedArray.length;i++)
         {
             if (mInputText.charAt(i) == ' ')
@@ -62,6 +64,8 @@ public class Encoding {
                 encoded += alphabet.charAt(key);
             }
         }
+
+
 
         try {
 

@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+
 public class HangmanTwo {
 
     public static String[] words = {
@@ -76,6 +77,7 @@ public class HangmanTwo {
     public static int countRepeat;
     public static int countUnderlineRepeat;
     public static int getCountCorrect = 0;
+    public static String playerName;
 
 
     public static void main(String[] args) throws IOException {
@@ -84,11 +86,8 @@ public class HangmanTwo {
 
 
 
-
-
             do {
 
-                FileReader.displayScores();
 
             System.out.print("Welcome to Hangman!\n\n" + "Please enter your name: ");
 
@@ -97,13 +96,13 @@ public class HangmanTwo {
 
 
             Scanner scanner = new Scanner(System.in);
-            String name = scanner.nextLine();
+            playerName = scanner.nextLine();
 
 
             try{
-                FileWriter recordName = new FileWriter("record.txt",true);
+                FileWriter recordName = new FileWriter("scores.csv",true);
                 BufferedWriter out = new BufferedWriter(recordName);
-                out.write(name + ", ");
+                out.write(playerName + ", ");
                 out.close();
                 System.out.println("\nSuccessfully recorded you name.\n");
             }catch (Exception e){
@@ -138,11 +137,17 @@ public class HangmanTwo {
 
             gameCount();
 
+            Scores.totalScore();
+
 
 
             System.out.println("Do you want to play again? (y or n)");
             Scanner playAgain = new Scanner(System.in);
             userAnswer = playAgain.next().charAt(0);
+            if (userAnswer == 'n') {
+                System.out.println("============= Good Bye =============");
+                break;
+            }
 
         } while (userAnswer == 'y');
 
@@ -238,7 +243,7 @@ public class HangmanTwo {
             int score = 1;
 
             try{
-                FileWriter recordScore = new FileWriter("record.txt",true);
+                FileWriter recordScore = new FileWriter("scores.csv",true);
                 BufferedWriter out = new BufferedWriter(recordScore);
                 out.write(score + "\n");
                 out.close();
@@ -256,7 +261,6 @@ public class HangmanTwo {
 
 
     }
-
 
 
 
@@ -476,6 +480,19 @@ public class HangmanTwo {
             f.setVisible(true);
 
             System.out.println("Game Over! The secret word was " + "\"" + word + "\"" + "!");
+
+            int score = 0;
+
+            try{
+                FileWriter recordScore = new FileWriter("scores.csv",true);
+                BufferedWriter out = new BufferedWriter(recordScore);
+                out.write(score + "\n");
+                out.close();
+                System.out.println("\nSuccessfully recorded you score.\n");
+            }catch (Exception e){
+                System.err.println("Error while writing to file: " +
+                        e.getMessage());
+            }
 
         }
     }
