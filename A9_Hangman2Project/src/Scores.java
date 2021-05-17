@@ -9,6 +9,9 @@ public class Scores {
 
     public static int totalScore = 0;
     public static int winningScore = 0;
+    public static int gameNumber = 0;
+
+
 
 
     public static void displayScores() throws FileNotFoundException {
@@ -40,6 +43,7 @@ public class Scores {
 
             winningScore = 0;
             totalScore = 0;
+            gameNumber = 0;
 
 
             System.out.println(HangmanTwo.playerName + ", do you want to see your total score? (y or n)");
@@ -65,12 +69,14 @@ public class Scores {
                         if (currentName.equals(HangmanTwo.playerName)) {
                             winningScore = Integer.parseInt(values[1]);
                             totalScore = totalScore + winningScore;
+
+                            gameNumber++;
                         }
 
                     }
 
 
-                    System.out.println("You have won " + totalScore + " times!\n");
+                    System.out.println("You have won total of " + totalScore + " times in " + gameNumber + " games!\n");
 
 
                 } catch (IOException ex) {
@@ -79,7 +85,6 @@ public class Scores {
 
             } else if (newYesOrNo.charAt(0) == 'n') {
 
-                System.out.println ("Good Bye!");
 
         }
 
