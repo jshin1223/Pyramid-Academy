@@ -109,16 +109,6 @@ public class Decoding {
             }
 
 
-            newUnderline = Arrays.stream(Arrays.stream(word.split(""))
-                    .map(s -> {
-                        if (correctGuesses.isLetterCorrectGuess(s)) {
-                            return s;
-
-                        } else {
-                            return "-";
-                        }
-                    }).toArray(String[]::new))
-                    .collect(Collectors.joining());
 
 
 
