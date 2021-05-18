@@ -11,8 +11,7 @@ Projects:
 6. Battleship Game
 7. Exceptions
 8. Caesar Cipher 
-	- 8A. Functional Caesar Cipher in Functional Programming
-9. Hangman with Java Functional Programming
+9. Hangman 2 with Functional Programming
 10. Core Java Team Project
 
 
