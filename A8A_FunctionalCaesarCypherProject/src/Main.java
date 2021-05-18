@@ -10,9 +10,9 @@ public class Main {
 
         if(choice == 1)
         {
-            System.out.println("Enter a message");
+            System.out.print("Enter your message: ");
             String inputText = scanner.nextLine();
-            System.out.println("Enter a key number (1-52)");
+            System.out.print("Enter a key number (1-52): ");
             int key = scanner.nextInt();
             Encoding encoding = new Encoding(inputText,key);
             System.out.println(String.format("Your translated text is:\n%s",encoding.encode()));
@@ -20,9 +20,9 @@ public class Main {
         }
         else if(choice == 2)
         {
-            System.out.println("Enter your message");
+            System.out.print("Enter your message: ");
             String inputText = scanner.nextLine();
-            System.out.println("Enter a key number");
+            System.out.print("Enter a key number (1-52): ");
             int key = scanner.nextInt();
             Decoding decoding = new Decoding(key, inputText);
             System.out.println(String.format("Your translated text is:\n%s",decoding.decode()));

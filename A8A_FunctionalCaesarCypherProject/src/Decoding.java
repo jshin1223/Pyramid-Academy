@@ -35,7 +35,7 @@ public class Decoding {
             Scanner myReader = new Scanner(myText);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println("Reading the file to decrypt...\n" + "\"" + data + "\"" + " was read from the file.\n");
+                System.out.println("Reading the file to decrypt...\n" + "\"" + data + "\"" + " was read from the file.");
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -45,6 +45,8 @@ public class Decoding {
 
 
     }
+
+
     public String getInputText() {
         return data;
     }
@@ -52,6 +54,8 @@ public class Decoding {
         return mKey;
     }
     public boolean isValidInputText()
+
+
     {
         char[] chars = data.toCharArray();
 
@@ -65,6 +69,8 @@ public class Decoding {
 
         return true;
     }
+
+
     public boolean isValidKey()
     {
         return mKey >1 && mKey < 54;
@@ -107,11 +113,6 @@ public class Decoding {
                     decodedValue += replaceValue;
                 }
             }
-
-
-
-
-
 
             return decodedValue;
 
