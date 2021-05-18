@@ -47,7 +47,7 @@ public class User {
             MessageDigest md = MessageDigest.getInstance("MD5");
             this.pinHash = md.digest(pin.getBytes());
         } catch (Exception e) {
-            System.err.println("error, caught exeption : " + e.getMessage());
+            System.err.println("error, caught exception : " + e.getMessage());
             System.exit(1);
         }
 

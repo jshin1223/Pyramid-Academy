@@ -12,6 +12,15 @@ public class Scores {
     public static int gameNumber = 0;
 
 
+    public static double winningChance = 0;
+
+    public static double totalScoreValue = 0;
+    public static double gameNumberValue = 0;
+
+
+    public static int winningChanceFinalValue = 0;
+
+
 
 
     public static void displayScores() throws FileNotFoundException {
@@ -44,9 +53,16 @@ public class Scores {
             winningScore = 0;
             totalScore = 0;
             gameNumber = 0;
+            winningChance  = 0;
+
+            totalScoreValue = 0;
+            gameNumberValue = 0;
+
+            winningChanceFinalValue = 0;
 
 
-            System.out.println(HangmanTwo.playerName + ", do you want to see your total score? (y or n)");
+
+        System.out.println(HangmanTwo.playerName + ", do you want to see your total score? (y or n)");
             Scanner yesOrNo = new Scanner(System.in);
             String newYesOrNo = yesOrNo.nextLine();
 
@@ -73,10 +89,21 @@ public class Scores {
                             gameNumber++;
                         }
 
+
                     }
 
+                    double totalScoreValue = totalScore;
+                    double gameNumberValue = gameNumber;
 
-                    System.out.println("You have won total of " + totalScore + " times in " + gameNumber + " games!\n");
+                    winningChance = totalScoreValue/gameNumberValue * 100;
+
+                    winningChanceFinalValue = (int)winningChance;
+
+
+
+                    System.out.println("You have won total of " + totalScore + " times in " + gameNumber + " games!");
+
+                    System.out.println("===> Your winning percentage is " + winningChanceFinalValue + "%.\n");
 
 
                 } catch (IOException ex) {
