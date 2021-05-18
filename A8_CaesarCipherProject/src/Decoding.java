@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Decoding {
 
@@ -33,7 +35,7 @@ public class Decoding {
             Scanner myReader = new Scanner(myText);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println("Reading the file to decrypt...\n" + "\"" + data + "\"" + " was read from the file.\n");
+                System.out.println("Reading the file to decrypt...\n" + "\"" + data + "\"" + " was read from the file.");
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -43,6 +45,8 @@ public class Decoding {
 
 
     }
+
+
     public String getInputText() {
         return data;
     }
@@ -50,16 +54,23 @@ public class Decoding {
         return mKey;
     }
     public boolean isValidInputText()
+
+
     {
         char[] chars = data.toCharArray();
 
+        // old code
         for (char c : chars) {
             if(!Character.isLetter(c) && c != ' ') {
                 return false;
             }
         }
+
+
         return true;
     }
+
+
     public boolean isValidKey()
     {
         return mKey >1 && mKey < 54;
@@ -79,6 +90,9 @@ public class Decoding {
             decodedValue = "";
             String encodedArray[] = data.split("");
             String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
+
+
+            // old code
             for (int i = 0; i<encodedArray.length;i++)
             {
                 if (data.charAt(i) == ' ')
@@ -99,7 +113,6 @@ public class Decoding {
                     decodedValue += replaceValue;
                 }
             }
-
 
             return decodedValue;
 

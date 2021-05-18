@@ -50,6 +50,9 @@ public class Encoding {
         String encodedArray[] = mInputText.split("");
         String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
 
+
+
+
         // old code
         for (int i = 0; i<encodedArray.length;i++)
         {
@@ -64,6 +67,8 @@ public class Encoding {
                 encoded += alphabet.charAt(key);
             }
         }
+
+
 
 
 

@@ -22,11 +22,15 @@ public class Encoding {
     {
         char[] chars = mInputText.toCharArray();
 
+
+        // old code
         for (char c : chars) {
             if(!Character.isLetter(c) && c != ' ') {
                 return false;
             }
         }
+
+
         return true;
     }
 
@@ -45,6 +49,8 @@ public class Encoding {
         String encoded = "";
         String encodedArray[] = mInputText.split("");
         String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
+
+        // old code
         for (int i = 0; i<encodedArray.length;i++)
         {
             if (mInputText.charAt(i) == ' ')
@@ -58,6 +64,8 @@ public class Encoding {
                 encoded += alphabet.charAt(key);
             }
         }
+
+
 
         try {
 

@@ -57,14 +57,15 @@ public class Decoding {
 
 
     {
+
         char[] chars = data.toCharArray();
 
         // old code
-        for (char c : chars) {
-            if(!Character.isLetter(c) && c != ' ') {
-                return false;
-            }
-        }
+//        for (char c : chars) {
+//            if(!Character.isLetter(c) && c != ' ') {
+//                return false;
+//            }
+//        }
 
 
         return true;
@@ -92,29 +93,61 @@ public class Decoding {
             String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,";
 
 
+
+
+
+            // new code
+
+         decodedValue = Arrays.stream(Arrays.stream(encodedArray.split(""))
+                    .map(s -> {
+
+                        if (decodedOutput.isCorrectGuess(s) == ' ')
+                        {
+                            decodedValue += " ";
+                        }
+                        else
+                        {
+                            int charPosition = alphabet.indexOf(data.charAt(i));
+                            int keyVal = (charPosition - mKey) % 54;
+
+                            if (keyVal < 0)
+                            {
+                                keyVal = alphabet.length() + keyVal;
+                            }
+
+                            char replaceValue = alphabet.charAt(keyVal);
+                            decodedValue += replaceValue;
+                        }
+
+                    }).toArray(String[]::new))
+                    .collect(Collectors.joining());
+
+
+
             // old code
-            for (int i = 0; i<encodedArray.length;i++)
-            {
-                if (data.charAt(i) == ' ')
-                {
-                    decodedValue += " ";
-                }
-                else
-                {
-                    int charPosition = alphabet.indexOf(data.charAt(i));
-                    int keyVal = (charPosition - mKey) % 54;
-
-                    if (keyVal < 0)
-                    {
-                        keyVal = alphabet.length() + keyVal;
-                    }
-
-                    char replaceValue = alphabet.charAt(keyVal);
-                    decodedValue += replaceValue;
-                }
-            }
+//            for (int i = 0; i<encodedArray.length;i++)
+//            {
+//                if (data.charAt(i) == ' ')
+//                {
+//                    decodedValue += " ";
+//                }
+//                else
+//                {
+//                    int charPosition = alphabet.indexOf(data.charAt(i));
+//                    int keyVal = (charPosition - mKey) % 54;
+//
+//                    if (keyVal < 0)
+//                    {
+//                        keyVal = alphabet.length() + keyVal;
+//                    }
+//
+//                    char replaceValue = alphabet.charAt(keyVal);
+//                    decodedValue += replaceValue;
+//                }
+//            }
 
             return decodedValue;
+
 
 
         } catch (FileNotFoundException e) {
