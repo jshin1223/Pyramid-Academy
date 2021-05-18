@@ -14,8 +14,8 @@ public class Main {
             String inputText = scanner.nextLine();
             System.out.print("Enter a key number (1-52): ");
             int key = scanner.nextInt();
-            Encoding encoding = new Encoding(inputText,key);
-            System.out.println(String.format("Your translated text is:\n%s",encoding.encode()));
+            Encrypting encrypting = new Encrypting(inputText,key);
+            System.out.println(String.format("Your translated text is:\n%s",encrypting.encode()));
 
         }
         else if(choice == 2)
@@ -24,8 +24,8 @@ public class Main {
             String inputText = scanner.nextLine();
             System.out.print("Enter a key number (1-52): ");
             int key = scanner.nextInt();
-            Decoding decoding = new Decoding(key, inputText);
-            System.out.println(String.format("Your translated text is:\n%s",decoding.decode()));
+            Decrypting decrypting = new Decrypting(key, inputText);
+            System.out.println(String.format("Your translated text is:\n%s",decrypting.decode()));
         }
         else if(choice == 3)
         {
