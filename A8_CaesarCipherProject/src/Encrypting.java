@@ -23,11 +23,11 @@ public class Encrypting {
 
 
         // old code
-        for (char c : chars) {
-            if(!Character.isLetter(c) && c != ' ') {
-                return false;
-            }
-        }
+//        for (char c : chars) {
+//            if(!Character.isLetter(c) && c != ' ') {
+//                return false;
+//            }
+//        }
 
 
         return true;
@@ -71,7 +71,7 @@ public class Encrypting {
             FileWriter encodedText = new FileWriter("text.txt");
             encodedText.write(encoded);
             encodedText.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("\nSuccessfully wrote to the file.\n");
 
         } catch (IOException e) {
             System.out.println("An error occurred.");
