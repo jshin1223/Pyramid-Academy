@@ -12,7 +12,7 @@ Projects:
 7. Exceptions
 8. Caesar Cipher 
 9. Hangman 2 with Functional Programming
-10. Core Java Team Project
+10. ATMInterface - Core Java Team Project
 
 
 -------------------------------------
