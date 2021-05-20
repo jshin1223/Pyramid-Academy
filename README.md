@@ -13,23 +13,23 @@ A7. Exceptions\
 A8. Caesar Cipher\
 A9. Hangman 2 with Functional Programming
 
-AS10. ATMInterface - Core Java Team Project
+As10. ATMInterface - Core Java Team Project
 
-AS11. MySQL Setup\
-AS12. Building API\
-AS13. Building API\
-AS14. Introduction to Web Services\
-AS15. Spring Boot Hello World Rest Controller\
-AS16. Spring Boot Hibernate CRUD Assignment\
-AS17. React Components\
-AS18. Reat Functional Components\
-AS19. React Properties\
-AS20. React Class Components with State\
-AS21. React Events\
-AS22. React SetState\
-AS23. React Fetch\
-AS24. Reat Forms\
-AS25. React Tic-Tac-Toe
+As11. MySQL Setup\
+As12. Building API\
+As13. Building API\
+As14. Introduction to Web Services\
+As15. Spring Boot Hello World Rest Controller\
+As16. Spring Boot Hibernate CRUD Assignment\
+As17. React Components\
+As18. Reat Functional Components\
+As19. React Properties\
+As20. React Class Components with State\
+As21. React Events\
+As22. React SetState\
+As23. React Fetch\
+As24. Reat Forms\
+As25. React Tic-Tac-Toe
 
-AS26. Java Full-Stack Team Project
+As26. Java Full-Stack Team Project
 
