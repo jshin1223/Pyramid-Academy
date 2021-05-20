@@ -24,12 +24,12 @@ B16. Spring Boot Hibernate CRUD Assignment\
 B17. React Components\
 B18. Reat Functional Components\
 B19. React Properties\
-C20. React Class Components with State\
-C21. React Events\
-C22. React SetState\
-C23. React Fetch\
-C24. Reat Forms\
-C25. React Tic-Tac-Toe
+B20. React Class Components with State\
+B21. React Events\
+B22. React SetState\
+B23. React Fetch\
+B24. Reat Forms\
+B25. React Tic-Tac-Toe
 
-C26. Java Full-Stack Team Project
+B26. Java Full-Stack Team Project
 
