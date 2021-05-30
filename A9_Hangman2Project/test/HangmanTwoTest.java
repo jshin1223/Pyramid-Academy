@@ -6,8 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HangmanTwoTest {
 
+
+
     @BeforeEach
     void setUp() {
+
+
     }
 
     @AfterEach
@@ -16,6 +20,7 @@ class HangmanTwoTest {
 
     @Test
     void main() {
+
     }
 
     @Test
