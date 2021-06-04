@@ -33,14 +33,14 @@ public class PartsController {
 
 
     //This is a GET request that will read a list of all the parts.
-    //http://localhost:3306/retrieveAllParts
+    //http://localhost:8080/retrieveAllParts
     @GetMapping("/retrieveAllParts")
     public List<Parts> findAll() {
         return partsService.findAll();
     }
 
     //This is a POST request to add a new employee.
-    //http://localhost:3306/addParts
+    //http://localhost:8080/addParts
     @PostMapping("/addParts")
     public Parts addParts(@RequestBody Parts theParts) {
         //also just in case they pass an id in JSON .... set id to o
@@ -54,7 +54,7 @@ public class PartsController {
     }
 
     //This is a PUT request to update an existing part.
-    //http://localhost:3306/updateParts
+    //http://localhost:8080/updateParts
     @PutMapping("/updateParts")
     public Parts updateParts(@RequestBody Parts updateParts) {
         //No theEmployee.setId(0); this will execute an update instead of a create
@@ -63,7 +63,7 @@ public class PartsController {
     }
 
     //This is a DELETE request to delete an existing part.
-    //http://localhost:3306/deleteParts/1
+    //http://localhost:8080/deleteParts/1
     @DeleteMapping("/deleteParts/{partsId}")
     public String deleteParts(@PathVariable int partsId) {
         //This will execute the deleteByID.

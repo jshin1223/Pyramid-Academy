@@ -21,3 +21,5 @@ INSERT INTO `parts` VALUES
 (3,'windshield', 20, 1, 20),
 (4,'bulb', 4, 1, 15),
 (5,'air filter', 25, 25, 40)
+
+
