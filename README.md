@@ -1,21 +1,21 @@
 # Pyramid-Academy
 
-Projects:
+Projects 
+(Project name - Technologies used)
 
-A1. Dragon Cave\
-A2. Guess the Number\
-A3. Hangman\
-A4. Naught and Crosses\
-A5. Humans vs Goblins\
-A6. Battleship Game\
-A7. Exceptions\
-A8. Caesar Cipher\
-A9. Hangman 2 with Functional Programming
+A1. Dragon Cave - Core Java\
+A2. Guess the Number - Core Java\
+A3. Hangman - Core Java\
+A4. Naught and Crosses - Core Java\
+A5. Humans vs Goblins - Core Java\
+A6. Battleship Game - Core Java\
+A8. Caesar Cipher - Core Java\
+A9. Hangman 2 - Core Java in Functional Programming
 
-B10. ATMInterface - Core Java Team Project
+B10. ATMInterface - Core Java & MySQL
 
-B11. Parts Project built with Spring Boot\
-B12. Tic Tac Toe built with React
+B11. Parts Project - Spring Boot\
+B12. Tic Tac Toe - React
 
 
 
