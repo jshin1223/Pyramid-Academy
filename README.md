@@ -15,14 +15,8 @@ A5. Humans vs Goblins (Core Java)\
 A6. Battleship Game (Core Java)\
 A8. Caesar Cipher (Core Java)\
 A9. Hangman 2 (Core Java in Functional Programming)
-<<<<<<< HEAD
 
-B10. ATMInterface (Core Java, MySQL)
-
-=======
-  
-B10. ATMInterface (Core Java & MySQL)\
->>>>>>> main
+B10. ATMInterface (Core Java, MySQL)\
 B11. Parts Project (Spring Boot)\
 B12. Tic Tac Toe (React, JavaScript, HTML, CSS)
 
