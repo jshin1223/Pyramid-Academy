@@ -1,22 +1,19 @@
 # Pyramid-Academy
 
 <h3> Projects <h3> 
-
 <h5> * Project name (Technologies used) <h5> 
-
-<h3> A1. Dragon Cave </h3> (Core Java) 
-<h3> A2. Guess the Number </h3> (Core Java)
-<h3> A3. Hangman </h3>(Core Java)
-<h3> A4. Naught and Crosses </h3>(Core Java)
-<h3> A5. Humans vs Goblins </h3>(Core Java)
-<h3> A6. Battleship Game </h3>(Core Java)
-<h3> A8. Caesar Cipher </h3>(Core Java)
-<h3> A9. Hangman 2 </h3>(Core Java in Functional Programming)
-
-<h3> B10. ATMInterface </h3>(Core Java & MySQL)
-
-<h3> B11. Parts Project </h3>(Spring Boot)
-<h3> B12. Tic Tac Toe </h3>(React, JavaScript, HTML, CSS)
+  
+A1. Dragon Cave (Core Java) \
+A2. Guess the Number (Core Java)\
+A3. Hangman (Core Java)\
+A4. Naught and Crosses (Core Java)\
+A5. Humans vs Goblins (Core Java)\
+A6. Battleship Game (Core Java)\
+A8. Caesar Cipher (Core Java)\
+A9. Hangman 2 (Core Java in Functional Programming)\
+B10. ATMInterface (Core Java & MySQL)\
+B11. Parts Project (Spring Boot)\
+B12. Tic Tac Toe (React, JavaScript, HTML, CSS)
 
 
 
