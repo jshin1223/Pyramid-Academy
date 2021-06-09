@@ -1,1 +1,2 @@
-<h2> Tic Tac Toe in React </h2> 
+<h2> Tic Tac Toe </h2>
+<h4> Built with React, JavaScript, HTML, CSS</4>
