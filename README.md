@@ -1,6 +1,6 @@
 # Pyramid-Academy
 
-<h2> Projects <h2> 
+<h2> Projects </h2> 
   
 * Project name (Technologies used)
   </br>
