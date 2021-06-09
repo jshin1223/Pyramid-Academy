@@ -1,0 +1,14 @@
+.welcome {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
