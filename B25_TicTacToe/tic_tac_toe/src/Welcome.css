@@ -1,8 +1,9 @@
 .welcome {
   display: flex;
-  font-size: 30px;
+  font-size: 70px;
   justify-content: center;
   align-items: center;
+  font-weight: 500;
 
 }
 
@@ -10,5 +11,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 40px;
 }

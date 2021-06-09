@@ -4,10 +4,7 @@ import "../Welcome.css";
 
 function Welcome() {
         return <div>
-            <a class="welcome">
-                <h1>Welcome to Tic Tac Toe</h1> 
-            </a> 
-            
+            <p class="welcome">Welcome to Tic Tac Toe</p>
             <a href="game" class="link">Click to play</a>
         </div>; 
     
