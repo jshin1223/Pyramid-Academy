@@ -1,7 +1,11 @@
 # Pyramid-Academy
 
 <h2> Projects <h2> 
-* Project name (Technologies used) \
+  
+* Project name (Technologies used)
+  </br>
+  </br>
+  
   
 A1. Dragon Cave (Core Java) \
 A2. Guess the Number (Core Java)\
