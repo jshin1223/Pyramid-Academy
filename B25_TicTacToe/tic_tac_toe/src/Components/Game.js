@@ -13,7 +13,7 @@ function Game() {
     checkWin();
     checkIfTie();
 
-    if (player == "X") {
+    if (player === "X") {
       setPlayer("O");
     } else {
       setPlayer("X");
@@ -21,7 +21,7 @@ function Game() {
   }, [board]);
 
   useEffect(() => {
-    if (result.state != "none") {
+    if (result.state !== "none") {
       alert(`Game Finished! Winning Player: ${result.winner}`);
       restartGame();
     }
@@ -30,7 +30,7 @@ function Game() {
   const chooseSquare = (square) => {
     setBoard(
       board.map((val, idx) => {
-        if (idx == square && val == "") {
+        if (idx === square && val === "") {
           return player;
         }
 
@@ -39,16 +39,18 @@ function Game() {
     );
   };
 
+
   const checkWin = () => {
     Patterns.forEach((currPattern) => {
       const firstPlayer = board[currPattern[0]];
-      if (firstPlayer == "") return;
+      if (firstPlayer === "") return;
       let foundWinningPattern = true;
       currPattern.forEach((idx) => {
-        if (board[idx] != firstPlayer) {
+        if (board[idx] !== firstPlayer) {
           foundWinningPattern = false;
         }
       });
+
 
       if (foundWinningPattern) {
         setResult({ winner: player, state: "Won" });
@@ -56,10 +58,11 @@ function Game() {
     });
   };
 
+
   const checkIfTie = () => {
     let filled = true;
     board.forEach((square) => {
-      if (square == "") {
+      if (square === "") {
         filled = false;
       }
     });
