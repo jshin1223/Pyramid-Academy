@@ -18,7 +18,7 @@ A9. Hangman 2 (Core Java in Functional Programming)
 
 B10. ATM Interface (Core Java, MySQL)\
 B11. Parts Project (Spring Boot)\
-B12. Tic Tac Toe (React, JavaScript, HTML, CSS)
+B25. Tic Tac Toe (React, JavaScript, HTML, CSS)
 
 
 
